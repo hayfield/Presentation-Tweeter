@@ -21,3 +21,8 @@
     width: 20%;
     float: right;
 }
+
+#presentationIframe {
+    height: 100%;
+    width: 100%;
+}
