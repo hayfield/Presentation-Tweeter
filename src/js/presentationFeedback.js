@@ -2,6 +2,26 @@ $(function() {
     var lastTweetID = Number.MIN_VALUE;
     var tweetCount = 0;
     
+    $('#URLInput').click(function(){
+        if( $('#URLInput').attr('value') === 'http://www.example.com/doc.pdf' ){
+            $('#URLInput').attr('value', '');
+        }
+    }).blur(function(){
+        if( $('#URLInput').attr('value') === '' ){
+            $('#URLInput').attr('value', 'http://www.example.com/doc.pdf');
+        }
+    });
+    
+    $('#twitterInput').click(function(){
+        if( $('#twitterInput').attr('value') === 'example' ){
+            $('#twitterInput').attr('value', '');
+        }
+    }).blur(function(){
+        if( $('#twitterInput').attr('value') === '' ){
+            $('#twitterInput').attr('value', 'example');
+        }
+    });
+    
     $('#goButton').click(function(){
         if( $('#URLInput').attr('value').length > 1 ){
             $('#presentationIframe').attr('src', $('#URLInput').attr('value'));
