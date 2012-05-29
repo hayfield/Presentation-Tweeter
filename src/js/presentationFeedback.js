@@ -4,21 +4,21 @@ $(function() {
     
     $('#URLInput').click(function(){
         if( $('#URLInput').attr('value') === 'http://www.example.com/doc.pdf' ){
-            $('#URLInput').attr('value', '');
+            $('#URLInput').attr('value', '').removeClass('defaultText');
         }
     }).blur(function(){
         if( $('#URLInput').attr('value') === '' ){
-            $('#URLInput').attr('value', 'http://www.example.com/doc.pdf');
+            $('#URLInput').attr('value', 'http://www.example.com/doc.pdf').addClass('defaultText');
         }
     });
     
     $('#twitterInput').click(function(){
         if( $('#twitterInput').attr('value') === 'example' ){
-            $('#twitterInput').attr('value', '');
+            $('#twitterInput').attr('value', '').removeClass('defaultText');
         }
     }).blur(function(){
         if( $('#twitterInput').attr('value') === '' ){
-            $('#twitterInput').attr('value', 'example');
+            $('#twitterInput').attr('value', 'example').addClass('defaultText');
         }
     });
     

@@ -10,6 +10,10 @@ body {
     width: 300px;
 }
 
+input.defaultText {
+    color: #666;
+}
+
 #goButton {
     width: 100%;
 }
