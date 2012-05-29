@@ -1,3 +1,11 @@
+body {
+    margin: 0;
+}
+
+#startPage {
+    margin: 20px;
+}
+
 #goButton {
     width: 100%;
 }
@@ -6,6 +14,7 @@
     background-color: #00F;
     height: 100%;
     width: 100%;
+    display: none;
 }
 
 #presentation {
@@ -36,5 +45,5 @@
 }
 
 .tweet.odd {
-    background-color: #F0F;
+    background-color: #0FF;
 }

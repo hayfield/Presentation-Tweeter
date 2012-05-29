@@ -8,6 +8,9 @@ $(function() {
         }
         
         fetchTweets();
+        
+        $('#startPage').hide();
+        $('#presentingPane').show();
     });
     
     function fetchTweets(){
