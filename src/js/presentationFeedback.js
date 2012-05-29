@@ -16,11 +16,8 @@ $(function() {
     function fetchTweets(){
         var tweep = $('#twitterInput').attr('value');
         
-        console.log(tweep, 'hello', lastTweetID);
-        
         $.getJSON('http://search.twitter.com/search.json?since_id=' + lastTweetID + '&q=%40' + tweep + '&callback=?', function(data){
             lastTweetID = data.max_id;
-            console.log(data);
             var results = data.results;
             
             for( var i = results.length - 1; i >= 0; i-- ){
