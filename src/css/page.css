@@ -6,6 +6,11 @@ body {
     margin: 20px;
 }
 
+#startPage table {
+    border: 15px solid #0F0;
+    padding: 20px;
+}
+
 #startPage input[type=text] {
     width: 300px;
 }
