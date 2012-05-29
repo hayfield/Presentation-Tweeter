@@ -1,3 +1,23 @@
 #goButton {
     width: 100%;
 }
+
+#presentingPane {
+    background-color: #00F;
+    height: 100%;
+    width: 100%;
+}
+
+#presentation {
+    background-color: #0F0;
+    height: 100%;
+    width: 80%;
+    float: left;
+}
+
+#twitterInfo {
+    background-color: #F00;
+    height: 100%;
+    width: 20%;
+    float: right;
+}
