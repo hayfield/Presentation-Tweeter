@@ -40,7 +40,6 @@ $(function() {
         $.getJSON('http://search.twitter.com/search.json?since_id=' + lastTweetID + '&q=%40' + tweep + '&callback=?', function(data){
             lastTweetID = data.max_id;
             var results = data.results;
-            console.log(results);
             
             for( var i = results.length - 1; i >= 0; i-- ){
                 if( seenTweetIDs.indexOf( results[i].id ) === -1 ){
