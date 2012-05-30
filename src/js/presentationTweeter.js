@@ -2,7 +2,7 @@ $(function() {
     var lastTweetID = Number.MIN_VALUE;
     var tweetCount = 0;
     
-    $('#URLInput').click(function(){
+    $('#URLInput').focus(function(){
         if( $('#URLInput').attr('value') === 'http://www.example.com/doc.pdf' ){
             $('#URLInput').attr('value', '').removeClass('defaultText');
         }
@@ -12,7 +12,7 @@ $(function() {
         }
     });
     
-    $('#twitterInput').click(function(){
+    $('#twitterInput').focus(function(){
         if( $('#twitterInput').attr('value') === 'example' ){
             $('#twitterInput').attr('value', '').removeClass('defaultText');
         }
