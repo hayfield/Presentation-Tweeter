@@ -1,6 +1,7 @@
 $(function() {
     var lastTweetID = Number.MIN_VALUE;
     var tweetCount = 0;
+    var seenTweetIDs = new Array();
     
     $('#URLInput').focus(function(){
         if( $('#URLInput').attr('value') === 'http://www.example.com/doc.pdf' ){
@@ -39,19 +40,24 @@ $(function() {
         $.getJSON('http://search.twitter.com/search.json?since_id=' + lastTweetID + '&q=%40' + tweep + '&callback=?', function(data){
             lastTweetID = data.max_id;
             var results = data.results;
+            console.log(results);
             
             for( var i = results.length - 1; i >= 0; i-- ){
-                var tweetColor = tweetCount % 2 == 0 ? 'odd' : 'even';
-                
-                $('#twitterInfo')
-                .prepend(
-                    $(document.createElement('div'))
-                    .addClass('tweet')
-                    .addClass(tweetColor)
-                    .text(results[i].text)
-                );
-                
-                tweetCount++;
+                if( seenTweetIDs.indexOf( results[i].id ) === -1 ){
+                    var tweetColor = tweetCount % 2 == 0 ? 'odd' : 'even';
+                    
+                    $('#twitterInfo')
+                    .prepend(
+                        $(document.createElement('div'))
+                        .addClass('tweet')
+                        .addClass(tweetColor)
+                        .text(results[i].text)
+                    );
+                    
+                    seenTweetIDs.push( results[i].id );
+                    
+                    tweetCount++;
+                }
             }
             
             window.setTimeout( fetchTweets, 5000 );
